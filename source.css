@@ -1,0 +1,44 @@
+.flexibox {
+  display: flex;
+  flex-flow: row wrap;
+}
+.flexibox.fifths * {
+  flex-basis: 17%;
+}
+.flexibox.fifths *.double {
+  flex-basis: 35%;
+}
+.flexibox.fifths *.triple {
+  flex-basis: 55%;
+}
+.flexibox.fifths *.quadruple {
+  flex-basis: 75%;
+}
+.flexibox.quarters * {
+  flex-basis: 22%;
+}
+.flexibox.quarters *.double {
+  flex-basis: 47%;
+}
+.flexibox.quarters *.triple {
+  flex-basis: 72%;
+}
+.flexibox.thirds * {
+  flex-basis: 31%;
+}
+.flexibox.thirds *.double {
+  flex-basis: 64%;
+}
+.flexibox.halves * {
+  flex-basis: 47%;
+}
+.flexibox * {
+  min-width: 250px;
+  flex-grow: 1;
+  margin: 1%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.flexibox *.full {
+  flex-basis: 100%;
+}

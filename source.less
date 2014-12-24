@@ -1,0 +1,56 @@
+.flexibox {
+  display: flex;
+  flex-flow: row wrap;
+  
+  &.fifths * {
+    flex-basis: 17%;
+    
+    &.double{
+      flex-basis: 35%;
+    }
+    
+    &.triple{
+      flex-basis: 55%;
+    }
+    
+    &.quadruple{
+      flex-basis: 75%;
+    }
+  }
+  
+  &.quarters * {
+    flex-basis: 22%;
+    
+    &.double{
+      flex-basis: 47%;
+    }
+    
+    &.triple{
+      flex-basis: 72%;
+    }
+  }
+  
+  &.thirds * {
+    flex-basis: 31%;
+    
+    &.double{
+      flex-basis: 64%;
+    }
+  }
+  
+  &.halves * {
+    flex-basis: 47%;
+  }
+  
+  & * {
+    min-width: 250px;
+    flex-grow: 1;
+    margin: 1%;
+    padding: 10px;
+    box-sizing: border-box;
+    
+    &.full {
+      flex-basis: 100%;
+    }
+  }
+}
