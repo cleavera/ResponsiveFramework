@@ -1,56 +1,92 @@
-.flexibox {
+.flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  flex-flow: row wrap;
+}
+
+.flex-flow(@flow) {
+  -webkit-flex-flow: @flow;
+     -moz-flex-flow: @flow;
+      -ms-flex-flow: @flow;
+          flex-flow: @flow;
+}
+
+.flex-basis(@width: auto) {
+  -webkit-flex-basis: @width;
+     -moz-flex-basis: @width;
+      -ms-flex-basis: @width;
+          flex-basis: @width;
+}
+
+.flex-grow(@grow: 0) {
+  -webkit-flex-grow: @grow;
+     -moz-flex-grow: @grow;
+      -ms-flex-grow: @grow;
+          flex-grow: @grow;
+}
+
+.box-sizing (@type: border-box) {
+  -webkit-box-sizing: @type;
+     -moz-box-sizing: @type;
+          box-sizing: @type;
+}
+
+.flexibox {
+  .flexbox();
+  .flex-flow(row wrap);
   
   &.fifths * {
-    flex-basis: 17%;
+    .flex-basis(17%);
     
     &.double{
-      flex-basis: 35%;
+      .flex-basis(35%);
     }
     
     &.triple{
-      flex-basis: 55%;
+      .flex-basis(55%);
     }
     
     &.quadruple{
-      flex-basis: 75%;
+      .flex-basis(75%);
     }
   }
   
   &.quarters * {
-    flex-basis: 22%;
+    .flex-basis(22%);
     
     &.double{
-      flex-basis: 47%;
+      .flex-basis(47%);
     }
     
     &.triple{
-      flex-basis: 72%;
+      .flex-basis(72%);
     }
   }
   
   &.thirds * {
-    flex-basis: 31%;
+    .flex-basis(31%);
     
     &.double{
-      flex-basis: 64%;
+      .flex-basis(64%);
     }
   }
   
   &.halves * {
-    flex-basis: 47%;
+    .flex-basis(47%);
   }
   
   & * {
     min-width: 250px;
-    flex-grow: 1;
     margin: 1%;
     padding: 10px;
-    box-sizing: border-box;
+
+    .flex-grow(1);
+    .box-sizing(border-box);
     
     &.full {
-      flex-basis: 100%;
+      .flex-basis(100%);
     }
   }
 }
